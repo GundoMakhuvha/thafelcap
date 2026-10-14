@@ -121,8 +121,8 @@ header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;padding-block
 
 /* Sandton skyline: a quiet gold silhouette behind the hero */
 .skyline{position:absolute;inset:auto 0 0 0;width:100%;height:clamp(220px,34vw,380px);z-index:0;pointer-events:none;
-  -webkit-mask-image:linear-gradient(to top,transparent 0%,#000 30%,#000 50%,transparent 100%),linear-gradient(to right,transparent 0%,#000 14%,#000 86%,transparent 100%);
-  -webkit-mask-composite:source-in;mask-image:linear-gradient(to top,transparent 0%,#000 30%,#000 50%,transparent 100%),linear-gradient(to right,transparent 0%,#000 14%,#000 86%,transparent 100%);mask-composite:intersect}
+  -webkit-mask-image:linear-gradient(to top,transparent 0%,#000 30%,#000 100%),linear-gradient(to right,transparent 0%,#000 14%,#000 86%,transparent 100%);
+  -webkit-mask-composite:source-in;mask-image:linear-gradient(to top,transparent 0%,#000 30%,#000 100%),linear-gradient(to right,transparent 0%,#000 14%,#000 86%,transparent 100%);mask-composite:intersect}
 .hero-shell::after{content:"";position:absolute;left:0;right:0;bottom:0;height:90px;background:linear-gradient(to bottom,transparent,var(--bg));z-index:0;pointer-events:none}
 .sk-caption{bottom:40px!important}
 @media (max-width:700px){.sk-caption{display:none}}
