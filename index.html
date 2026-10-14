@@ -485,6 +485,27 @@ p{text-wrap:pretty}
 img{-webkit-user-drag:none}
 @media (prefers-reduced-motion:reduce){.licence .dot{animation:none}}
 
+/* Hero: centred welcome only; appointments moved to a long card below */
+.hero-grid{grid-template-columns:1fr!important;justify-items:center}
+.hero-copy{text-align:center;width:100%;display:grid;justify-items:center}
+.hero h1.type{display:inline-block;text-align:left;font-size:min(6.4rem,14.5cqi)}
+.hero .lede{margin-inline:auto}
+.hero .actions{justify-content:center}
+.hero{padding-block:72px clamp(170px,22vw,250px)}
+
+/* Current appointments: long card */
+.appts-wrap{padding-block:24px 0}
+.appts-card{display:grid;grid-template-columns:auto 1fr;gap:20px 40px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:26px;padding:24px 30px}
+.appts-head{display:flex;align-items:center;gap:14px}
+.appts-head .mark{height:44px}
+.appts-list{margin:0;display:grid;grid-template-columns:repeat(3,1fr);gap:16px 28px}
+.appts-list>div{min-width:0;padding-left:20px;border-left:1px solid var(--line)}
+.appts-list dt{font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.appts-list dd{margin:4px 0 0;font-weight:500;display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px}
+.appts-list .status{margin-left:0}
+@media (max-width:980px){.appts-card{grid-template-columns:1fr}.appts-list>div:first-child{padding-left:0;border-left:0}}
+@media (max-width:700px){.appts-list{grid-template-columns:1fr}.appts-list>div{padding-left:0;border-left:0;padding-top:14px;border-top:1px solid var(--line)}.appts-card{padding:22px 20px;border-radius:22px}}
+
 footer{padding-block:36px 48px;color:var(--muted);font-size:.88rem;border-top:1px solid var(--line);margin-top:24px}
 .foot{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:32px}
 .foot .brand .mark{height:24px}.foot .brand span{font-size:1.15rem;color:var(--ink)}
@@ -553,15 +574,6 @@ footer{padding-block:36px 48px;color:var(--muted);font-size:.88rem;border-top:1p
           <a class="btn ghost" href="#rescue">How business rescue works</a>
         </div>
       </div>
-      <aside class="mandate" aria-label="Current appointments">
-        <i class="mark" aria-hidden="true"></i>
-        <p class="eyebrow">Current appointments</p>
-        <dl>
-          <div><dt>Joint Senior BRP</dt><dd>Zephan Properties (Pty) Ltd <span class="status">In rescue</span></dd></div>
-          <div><dt>Joint Senior BRP</dt><dd>Orthotouch (Pty) Ltd <span class="status">In rescue</span></dd></div>
-          <div><dt>Licensed by</dt><dd>Companies and Intellectual Property Commission (CIPC)</dd></div>
-        </dl>
-      </aside>
     </div>
   </section>
   </div>
@@ -572,6 +584,20 @@ footer{padding-block:36px 48px;color:var(--muted);font-size:.88rem;border-top:1p
       <div class="fig"><em>Leadership</em><b>12+</b><span>years serving as Chief Executive Officer</span><div class="meter"><i></i></div></div>
       <div class="fig"><em>IDC portfolio</em><b>R90bn+</b><span>private equity and loan portfolio overseen at the IDC</span><div class="meter"><i></i></div></div>
       <div class="fig"><em>LEDA pledges</em><b>R400bn+</b><span>investment pledges mobilised for Limpopo at LEDA</span><div class="meter"><i></i></div></div>
+    </div>
+  </section>
+
+  <section class="wrap appts-wrap" aria-label="Current appointments">
+    <div class="appts-card">
+      <div class="appts-head">
+        <i class="mark" aria-hidden="true"></i>
+        <p class="eyebrow">Current appointments</p>
+      </div>
+      <dl class="appts-list">
+        <div><dt>Joint Senior BRP</dt><dd>Zephan Properties (Pty) Ltd <span class="status">In rescue</span></dd></div>
+        <div><dt>Joint Senior BRP</dt><dd>Orthotouch (Pty) Ltd <span class="status">In rescue</span></dd></div>
+        <div><dt>Licensed by</dt><dd>Companies and Intellectual Property Commission (CIPC)</dd></div>
+      </dl>
     </div>
   </section>
 
