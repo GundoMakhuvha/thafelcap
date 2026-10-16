@@ -648,6 +648,30 @@ footer{padding-block:36px 48px;color:var(--muted);font-size:.88rem;border-top:1p
 .hero-arcs .ripple circle:nth-child(2){animation-delay:4.5s}
 @keyframes arc-ripple{0%{transform:scale(.6);opacity:0}15%{opacity:.85}100%{transform:scale(2.6);opacity:0}}
 @media (prefers-reduced-motion:reduce){.hero-arcs circle{animation:none!important}.hero-arcs .ripple{display:none}}
+
+/* ===== Final touches (Oct 16) ===== */
+/* Navy banner fades into the page at the bottom */
+.hero-shell::after{display:block!important;content:"";position:absolute;left:0;right:0;bottom:0;height:clamp(150px,20vw,240px);background:linear-gradient(to bottom,transparent 0%,color-mix(in srgb,var(--bg) 8%,transparent) 25%,color-mix(in srgb,var(--bg) 30%,transparent) 50%,color-mix(in srgb,var(--bg) 70%,transparent) 75%,var(--bg) 100%);z-index:0;pointer-events:none}
+.hero{padding-bottom:clamp(220px,26vw,300px)!important}
+.hero-shell .scroll-cue{bottom:clamp(120px,15vw,180px)}
+.figures{padding-top:0!important;margin-top:-24px;position:relative;z-index:1}
+/* Hero content settles in once the loader clears */
+.hero-copy>*{animation:rise-in .9s cubic-bezier(.2,.7,.2,1) both}
+.hero-copy>*:nth-child(1){animation-delay:1.6s}
+.hero-copy>*:nth-child(3){animation-delay:1.9s}
+.hero-copy>*:nth-child(4){animation-delay:2.05s}
+@keyframes rise-in{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+/* Gold lead-in line on page eyebrows */
+.page-hero .eyebrow,.sec-head .eyebrow{display:inline-flex;align-items:center;gap:10px}
+.page-hero .eyebrow::before,.sec-head .eyebrow::before{content:"";width:22px;height:1px;background:currentColor;opacity:.8}
+/* Form fields glow gold when active */
+input:focus,textarea:focus,select:focus{box-shadow:0 0 0 4px color-mix(in srgb,var(--gold-bright) 22%,transparent)}
+/* Cards lift gently */
+.appts-card,.panel,.fig{transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s,border-color .35s}
+.appts-card:hover{box-shadow:0 22px 44px -30px rgb(13 27 42/.45)}
+::selection{background:var(--navy);color:var(--gold-bright)}
+@media (max-width:640px){.hero{padding-bottom:170px!important}.hero-shell .scroll-cue{display:none}.figures{margin-top:-12px}}
+@media (prefers-reduced-motion:reduce){.hero-copy>*{animation:none}}
 </style>
 <style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 </head>
@@ -730,7 +754,7 @@ footer{padding-block:36px 48px;color:var(--muted);font-size:.88rem;border-top:1p
         <div><dt><span class="dt-ico" aria-hidden="true"><svg><use href="#i-usercheck"/></svg></span>Joint Senior BRP</dt><dd>Zephan Properties (Pty) Ltd <span class="status">In rescue</span></dd></div>
         <div><dt><span class="dt-ico" aria-hidden="true"><svg><use href="#i-usercheck"/></svg></span>Joint Senior BRP</dt><dd>Orthotouch (Pty) Ltd <span class="status">In rescue</span></dd></div>
         <div><dt><span class="dt-ico" aria-hidden="true"><svg><use href="#i-usercheck"/></svg></span>Senior BRP</dt><dd>Orbitum Investments (Pty) Ltd <span class="status">In rescue</span></dd></div>
-        <div><dt><span class="dt-ico" aria-hidden="true"><svg><use href="#i-scale"/></svg></span>Licensed by</dt><dd class="lic-dd"><span>Companies and Intellectual Property Commission (CIPC) as Senior BRP since September 2020</span><a class="lic-link" href="https://i.postimg.cc/FKBn39kv/Thafel-Cap-Group-CIPC-Renew.png" target="_blank" rel="noopener"><span class="lic-ico" aria-hidden="true"><svg><use href="#i-doc"/></svg></span>View licence ↗</a><small class="lic-note">Renewed 14 Oct 2026 · valid to 14 Oct 2029</small></dd></div>
+        <div><dt><span class="dt-ico" aria-hidden="true"><svg><use href="#i-scale"/></svg></span>Licensed by</dt><dd class="lic-dd"><span>Companies and Intellectual Property Commission (CIPC) as Senior BRP since September 2020</span><a class="lic-link" href="https://www.dropbox.com/scl/fi/9wavxlihdx0onwa2dppkb/ThafelCapGroup-CIPC-Renew.pdf?rlkey=73a9uzse6ya8a5pdpzgpzsb6j&amp;st=3fa74pmv&amp;dl=0" target="_blank" rel="noopener"><span class="lic-ico" aria-hidden="true"><svg><use href="#i-doc"/></svg></span>View licence ↗</a><small class="lic-note">Renewed 14 Oct 2026 · valid to 14 Oct 2029</small></dd></div>
       </dl>
     </div>
   </section>
@@ -930,7 +954,7 @@ footer{padding-block:36px 48px;color:var(--muted);font-size:.88rem;border-top:1p
     <div style="display:grid;gap:12px;align-content:start">
       <a class="brand" href="#home"><i class="mark" aria-hidden="true"></i><span>ThafelCap Group</span></a>
       <p style="max-width:36ch">Business rescue, turnaround, restructuring and strategic advisory services.</p>
-      <a class="licence" href="https://i.postimg.cc/FKBn39kv/Thafel-Cap-Group-CIPC-Renew.png" target="_blank" rel="noopener" title="Business Rescue License (opens certificate)"><span class="dot" aria-hidden="true"></span>CIPC-licensed Senior Business Rescue Practitioner ↗</a>
+      <a class="licence" href="https://www.dropbox.com/scl/fi/9wavxlihdx0onwa2dppkb/ThafelCapGroup-CIPC-Renew.pdf?rlkey=73a9uzse6ya8a5pdpzgpzsb6j&amp;st=3fa74pmv&amp;dl=0" target="_blank" rel="noopener" title="Business Rescue License (opens on Dropbox)"><span class="dot" aria-hidden="true"></span>CIPC-licensed Senior Business Rescue Practitioner ↗</a>
     </div>
     <div><h4>Pages</h4><ul><li><a href="#home">Home</a></li><li><a href="#services">Services</a></li><li><a href="#rescue">Business Rescue</a></li><li><a href="#about">About</a></li><li><a href="#contact">Contact</a></li></ul></div>
     <div><h4>Contact</h4><ul class="foot-contact"><li><span class="f-ico" aria-hidden="true"><svg><use href="#i-mail"/></svg></span>thakhani@thafelcap.co.za</li><li><span class="f-ico" aria-hidden="true"><svg><use href="#i-mail"/></svg></span>info@thafelcap.co.za</li><li><span class="f-ico" aria-hidden="true"><svg><use href="#i-phone"/></svg></span>+27 82 384 7467</li><li><span class="f-ico" aria-hidden="true"><svg><use href="#i-pin"/></svg></span>Kempton Park, Gauteng</li><li><span class="f-ico" aria-hidden="true"><svg><use href="#i-globe"/></svg></span><a href="https://www.thafelcap.co.za">www.thafelcap.co.za</a></li></ul></div>
